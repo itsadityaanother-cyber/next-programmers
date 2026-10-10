@@ -1,0 +1,98 @@
+/* Next Programmers review section — responsive, namespaced styles */
+.np-reviews {
+  --np-bg: #080d1b;
+  --np-panel: rgba(18, 27, 50, .82);
+  --np-panel-soft: rgba(255, 255, 255, .035);
+  --np-border: rgba(159, 177, 220, .16);
+  --np-text: #f5f7ff;
+  --np-muted: #a3aec8;
+  --np-purple: #9d7bff;
+  --np-blue: #55d5ff;
+  --np-star: #ffc96b;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6.5rem) 1.25rem;
+  background: var(--np-bg);
+  color: var(--np-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.np-reviews * { box-sizing: border-box; }
+.np-reviews__glow { position: absolute; z-index: -1; width: 28rem; height: 28rem; border-radius: 50%; filter: blur(100px); opacity: .13; pointer-events: none; }
+.np-reviews__glow--one { top: -8rem; left: -11rem; background: #7455ff; }
+.np-reviews__glow--two { top: 28%; right: -15rem; background: #18b9e9; }
+.np-reviews__inner { width: min(1120px, 100%); margin: 0 auto; }
+.np-reviews__heading { max-width: 740px; margin: 0 auto 3rem; text-align: center; }
+.np-reviews__eyebrow { display: flex; align-items: center; justify-content: inherit; gap: .55rem; margin: 0 0 1rem; color: #b7a7ff; font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
+.np-reviews__eyebrow-dot { width: .45rem; height: .45rem; border-radius: 50%; background: var(--np-blue); box-shadow: 0 0 15px #55d5ff; }
+.np-reviews__heading h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 850; }
+.np-reviews__heading h2 span { display: inline-block; background: linear-gradient(105deg, #c6adff 8%, #69dcff 92%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.np-reviews__intro { max-width: 570px; margin: 1.15rem auto 0; color: var(--np-muted); font-size: 1rem; line-height: 1.75; }
+.np-reviews__layout { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.8fr); gap: 1.25rem; align-items: stretch; }
+.np-rating-summary, .np-review-content, .np-review-form { border: 1px solid var(--np-border); border-radius: 22px; background: var(--np-panel); box-shadow: 0 18px 60px rgba(0,0,0,.14); backdrop-filter: blur(12px); }
+.np-rating-summary { padding: 1.6rem; min-height: 100%; }
+.np-rating-summary__topline { color: var(--np-muted); font-size: .68rem; font-weight: 800; letter-spacing: .15em; }
+.np-rating-summary__score { margin-top: 1.25rem; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1; font-weight: 850; letter-spacing: -.06em; }
+.np-rating-summary__score span { margin-left: .35rem; color: var(--np-muted); font-size: 1rem; font-weight: 600; letter-spacing: 0; }
+.np-stars { color: var(--np-star); letter-spacing: .12em; white-space: nowrap; }
+.np-stars--summary { margin-top: .9rem; font-size: 1.25rem; }
+.np-rating-summary__count { min-height: 2.7em; margin: .65rem 0 1.3rem; color: var(--np-muted); font-size: .84rem; line-height: 1.55; }
+.np-rating-summary__divider { height: 1px; background: var(--np-border); }
+.np-rating-summary__note { margin: 1.1rem 0 0; color: #c3cce0; font-size: .85rem; line-height: 1.7; }
+.np-review-content { padding: 1.5rem; min-width: 0; }
+.np-review-content__toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.np-review-content__toolbar h3, .np-review-form h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.025em; }
+.np-review-content__toolbar p { margin: .35rem 0 0; color: var(--np-muted); font-size: .8rem; }
+.np-sort-label { display: flex; align-items: center; gap: .55rem; color: var(--np-muted); font-size: .78rem; }
+.np-sort-label select, .np-field input, .np-field select, .np-field textarea { width: 100%; border: 1px solid rgba(169, 184, 222, .2); outline: none; border-radius: 11px; background: #0d1428; color: var(--np-text); font: inherit; transition: border-color .18s ease, box-shadow .18s ease; }
+.np-sort-label select { width: auto; padding: .6rem .7rem; font-size: .78rem; }
+.np-field input:focus, .np-field select:focus, .np-field textarea:focus, .np-sort-label select:focus { border-color: #9d7bff; box-shadow: 0 0 0 3px rgba(157,123,255,.13); }
+.np-review-list { display: grid; gap: .8rem; }
+.np-review-empty { display: grid; justify-items: center; align-content: center; min-height: 235px; padding: 1.5rem; border: 1px dashed rgba(169,184,222,.22); border-radius: 15px; text-align: center; background: var(--np-panel-soft); }
+.np-review-empty__icon { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; margin-bottom: .8rem; border: 1px solid rgba(157,123,255,.3); border-radius: 13px; color: #c3adff; background: rgba(157,123,255,.1); font-size: 1.35rem; }
+.np-review-empty h4 { margin: 0; font-size: .98rem; }
+.np-review-empty p { max-width: 340px; margin: .5rem 0 0; color: var(--np-muted); font-size: .83rem; line-height: 1.65; }
+.np-review-card { padding: 1.15rem; border: 1px solid var(--np-border); border-radius: 15px; background: var(--np-panel-soft); animation: np-review-enter .25s ease both; }
+.np-review-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; }
+.np-review-card__person { display: flex; align-items: center; gap: .7rem; min-width: 0; }
+.np-review-card__avatar { display: grid; place-items: center; flex: 0 0 2.45rem; height: 2.45rem; border: 1px solid rgba(157,123,255,.25); border-radius: 12px; background: linear-gradient(135deg, rgba(157,123,255,.22), rgba(85,213,255,.12)); color: #ddd4ff; font-weight: 800; }
+.np-review-card__name { overflow-wrap: anywhere; font-size: .9rem; font-weight: 750; }
+.np-review-card__course { margin-top: .22rem; color: var(--np-muted); font-size: .72rem; }
+.np-review-card__date { color: var(--np-muted); font-size: .7rem; text-align: right; }
+.np-review-card__stars { margin-top: .9rem; color: var(--np-star); font-size: .9rem; letter-spacing: .1em; }
+.np-review-card__text { margin: .6rem 0 0; color: #d5dced; font-size: .88rem; line-height: 1.75; overflow-wrap: anywhere; white-space: pre-wrap; }
+.np-review-form { margin-top: 1.25rem; padding: clamp(1.25rem, 4vw, 2rem); }
+.np-review-form__header { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; margin-bottom: 1.6rem; }
+.np-review-form__header .np-reviews__eyebrow { justify-content: flex-start; margin-bottom: .6rem; }
+.np-review-form__header h3 { font-size: 1.5rem; }
+.np-review-form__header p:not(.np-reviews__eyebrow) { margin: .45rem 0 0; color: var(--np-muted); font-size: .85rem; line-height: 1.6; }
+.np-review-form__badge { display: grid; place-items: center; flex: 0 0 2.8rem; height: 2.8rem; border: 1px solid rgba(157,123,255,.25); border-radius: 14px; color: #c4b1ff; background: rgba(157,123,255,.1); font-size: 1.35rem; }
+.np-review-form__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.np-field { min-width: 0; margin-bottom: 1.1rem; }
+.np-field label, .np-rating-picker legend { display: block; margin-bottom: .5rem; color: #e6ebf8; font-size: .82rem; font-weight: 700; }
+.np-field label span, .np-rating-picker legend span { margin-left: .3rem; color: var(--np-muted); font-size: .75rem; font-weight: 400; }
+.np-field input, .np-field select { height: 2.9rem; padding: 0 .85rem; font-size: .85rem; }
+.np-field textarea { min-height: 115px; padding: .8rem .85rem; resize: vertical; font-size: .85rem; line-height: 1.6; }
+.np-field input::placeholder, .np-field textarea::placeholder { color: #6f7c9d; }
+.np-rating-picker { margin: 0 0 1.1rem; padding: 0; border: 0; }
+.np-rating-picker legend { margin-bottom: .65rem; }
+.np-rating-picker__stars { display: flex; align-items: center; gap: .3rem; flex-wrap: wrap; }
+.np-star-button { border: 0; padding: .1rem .12rem; color: #51607f; background: transparent; font-size: 1.85rem; line-height: 1.2; cursor: pointer; transition: color .15s ease, transform .15s ease; }
+.np-star-button:hover { transform: translateY(-2px); }
+.np-star-button.is-active { color: var(--np-star); }
+.np-star-button:focus-visible, .np-submit-button:focus-visible { outline: 3px solid rgba(85,213,255,.75); outline-offset: 3px; }
+.np-rating-picker__hint { margin-left: .6rem; color: var(--np-muted); font-size: .78rem; }
+.np-review-form__foot { display: flex; justify-content: space-between; gap: 1rem; margin-top: .45rem; color: var(--np-muted); font-size: .7rem; }
+.np-review-form__bottom { display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; margin-top: .3rem; }
+.np-review-form__privacy { max-width: 440px; margin: 0; color: var(--np-muted); font-size: .75rem; line-height: 1.6; }
+.np-submit-button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 2.9rem; padding: .8rem 1.15rem; border: 0; border-radius: 11px; background: linear-gradient(110deg, #9b78ff, #6b8dff 55%, #54d3f5); color: #080d1b; cursor: pointer; font: inherit; font-size: .84rem; font-weight: 850; box-shadow: 0 8px 25px rgba(113,119,255,.2); transition: transform .18s ease, filter .18s ease; }
+.np-submit-button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.np-form-message { display: none; margin: 1rem 0 0; font-size: .83rem; line-height: 1.55; }
+.np-form-message.is-visible { display: block; }
+.np-form-message.is-success { color: #87efc4; }
+.np-form-message.is-error { color: #ffb3bd; }
+.np-reviews__disclaimer { margin: 1rem 0 0; color: #7f8aa6; font-size: .72rem; line-height: 1.6; text-align: center; }
+@keyframes np-review-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) { .np-reviews__layout { grid-template-columns: 1fr; } .np-rating-summary { min-height: auto; } .np-rating-summary__score { font-size: 3.5rem; } .np-rating-summary__count { min-height: 0; margin-bottom: 1rem; } }
+@media (max-width: 520px) { .np-reviews { padding-inline: .9rem; } .np-review-content { padding: 1rem; } .np-review-content__toolbar { align-items: flex-start; flex-direction: column; } .np-sort-label { align-self: flex-end; } .np-review-form__fields { grid-template-columns: 1fr; gap: 0; } .np-review-form__bottom { align-items: stretch; flex-direction: column; } .np-submit-button { width: 100%; } .np-review-card__top { flex-direction: column; } .np-review-card__date { text-align: left; } .np-rating-picker__hint { flex-basis: 100%; margin: .35rem 0 0; } }
+@media (prefers-reduced-motion: reduce) { .np-reviews *, .np-reviews *::before, .np-reviews *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }

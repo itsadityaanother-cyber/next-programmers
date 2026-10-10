@@ -1,0 +1,100 @@
+<!-- Drop this section into the page where you want reviews to appear. -->
+<section class="np-reviews" id="reviews" aria-labelledby="np-reviews-title">
+  <div class="np-reviews__glow np-reviews__glow--one" aria-hidden="true"></div>
+  <div class="np-reviews__glow np-reviews__glow--two" aria-hidden="true"></div>
+
+  <div class="np-reviews__inner">
+    <div class="np-reviews__heading">
+      <p class="np-reviews__eyebrow"><span class="np-reviews__eyebrow-dot"></span> THE LEARNER COMMUNITY</p>
+      <h2 id="np-reviews-title">Your feedback. <span>Our next step.</span></h2>
+      <p class="np-reviews__intro">Learning is better when we grow together. Share your experience with Next Programmers.</p>
+    </div>
+
+    <div class="np-reviews__layout">
+      <aside class="np-rating-summary" aria-label="Overall review rating">
+        <div class="np-rating-summary__topline">COMMUNITY RATING</div>
+        <div class="np-rating-summary__score" id="np-average-rating">—<span>/ 5</span></div>
+        <div class="np-stars np-stars--summary" id="np-summary-stars" aria-label="No ratings yet">☆☆☆☆☆</div>
+        <p class="np-rating-summary__count" id="np-review-count">Be the first to leave a review.</p>
+        <div class="np-rating-summary__divider"></div>
+        <p class="np-rating-summary__note">Every suggestion helps us make learning programming better.</p>
+      </aside>
+
+      <div class="np-review-content">
+        <div class="np-review-content__toolbar">
+          <div>
+            <h3>Reviews from learners</h3>
+            <p>Honest experiences from the community</p>
+          </div>
+          <label class="np-sort-label" for="np-review-sort">Sort
+            <select id="np-review-sort">
+              <option value="newest">Newest</option>
+              <option value="highest">Highest rated</option>
+              <option value="lowest">Lowest rated</option>
+            </select>
+          </label>
+        </div>
+        <div class="np-review-list" id="np-review-list" aria-live="polite">
+          <div class="np-review-empty">
+            <div class="np-review-empty__icon" aria-hidden="true">✦</div>
+            <h4>Your review could be the first</h4>
+            <p>No reviews yet. Tell other learners what your experience has been like.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="np-review-form" id="np-review-form">
+      <div class="np-review-form__header">
+        <div>
+          <p class="np-reviews__eyebrow">YOUR TURN</p>
+          <h3>Write a review</h3>
+          <p>Your feedback helps the Next Programmers community improve.</p>
+        </div>
+        <div class="np-review-form__badge" aria-hidden="true">✎</div>
+      </div>
+
+      <div class="np-review-form__fields">
+        <div class="np-field">
+          <label for="np-review-name">Name to display</label>
+          <input id="np-review-name" name="name" type="text" maxlength="40" placeholder="e.g. CodeLearner" autocomplete="nickname" required />
+        </div>
+        <div class="np-field">
+          <label for="np-review-course">Course / topic <span>(optional)</span></label>
+          <select id="np-review-course" name="course">
+            <option value="General experience">General experience</option>
+            <option value="Web development">Web development</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Other programming topic">Other programming topic</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="np-rating-picker">
+        <legend>Your rating <span>Choose 1 to 5 stars</span></legend>
+        <div class="np-rating-picker__stars" role="radiogroup" aria-label="Choose a rating">
+          <button type="button" class="np-star-button" role="radio" aria-checked="false" aria-label="1 star" data-rating="1">★</button>
+          <button type="button" class="np-star-button" role="radio" aria-checked="false" aria-label="2 stars" data-rating="2">★</button>
+          <button type="button" class="np-star-button" role="radio" aria-checked="false" aria-label="3 stars" data-rating="3">★</button>
+          <button type="button" class="np-star-button" role="radio" aria-checked="false" aria-label="4 stars" data-rating="4">★</button>
+          <button type="button" class="np-star-button" role="radio" aria-checked="false" aria-label="5 stars" data-rating="5">★</button>
+          <span class="np-rating-picker__hint" id="np-rating-hint">Select a rating</span>
+        </div>
+      </fieldset>
+
+      <div class="np-field">
+        <label for="np-review-text">Your review</label>
+        <textarea id="np-review-text" name="review" rows="4" minlength="10" maxlength="600" placeholder="What did you like? What could be better?" required></textarea>
+        <div class="np-review-form__foot"><span>10–600 characters</span><span id="np-char-count">0 / 600</span></div>
+      </div>
+
+      <div class="np-review-form__bottom">
+        <p class="np-review-form__privacy">Use a display name and keep personal details out of your review.</p>
+        <button type="submit" class="np-submit-button">Submit review <span aria-hidden="true">↗</span></button>
+      </div>
+      <p class="np-form-message" id="np-form-message" role="status" aria-live="polite"></p>
+    </form>
+    <p class="np-reviews__disclaimer">Preview version: reviews are saved only in this browser. Connect a server and database before using this for public, shared reviews.</p>
+  </div>
+</section>
